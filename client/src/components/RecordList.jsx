@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Record = (props) => (
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
@@ -34,6 +35,16 @@ const Record = (props) => (
     </td>
   </tr>
 );
+
+Record.propTypes = {
+  record: PropTypes.shape({
+    name: PropTypes.string,
+    position: PropTypes.string,
+    level: PropTypes.string,
+    _id: PropTypes.string,
+  }),
+  deleteRecord: PropTypes.func,
+};
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
