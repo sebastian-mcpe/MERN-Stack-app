@@ -1,6 +1,5 @@
 import { config } from "dotenv";
-config({ path: "./server/config.env"});
-console.log(process.env.ATLAS_URI);
+config({ path: "./config.env"});
 
 import express from "express";
 import cors from "cors";
